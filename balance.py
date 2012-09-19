@@ -41,6 +41,7 @@ def summary():
     #     itemList[2] =  
     #     print itemList
     #f.close() 
+    print 'test'
 
 if (argvs[0] == 'add'):
     add()
