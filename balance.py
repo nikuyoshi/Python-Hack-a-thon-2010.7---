@@ -42,7 +42,6 @@ else:
                  date[itemList[x][0]] = int(itemList[x][1])
         for (i, j) in date.items():
             print '%s \t %d' %(i, j)
-
     if (argvs[0] == 'add'):
         add()
     elif (argvs[0] == 'summary'):
