@@ -42,7 +42,23 @@ else:
                  date[itemList[x][0]] = int(itemList[x][1])
         for (i, j) in date.items():
             print '%s \t %d' %(i, j)
+
+    def application():
+        f = open('cashbook.txt', 'r')
+        itemList = [line[:-1].split('\t') for line in f]
+        app = {} 
+        for x in range(len(itemList)):
+            if itemList[x][2] in app:
+                 app[itemList[x][2]] += int(itemList[x][1])
+            else :
+                 app[itemList[x][2]] = int(itemList[x][1])
+        for (i, j) in sorted(app.items(), key=lambda x:x[1], reverse=True):
+            print '%s \t %d' %(i, j)
+
+        
     if (argvs[0] == 'add'):
         add()
     elif (argvs[0] == 'summary'):
         summary()
+    elif (argvs[0] == 'application'):
+        application()
