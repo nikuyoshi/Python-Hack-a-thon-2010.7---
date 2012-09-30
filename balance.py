@@ -8,6 +8,8 @@ from datetime import date
 
 argvs = sys.argv[1:]
 argc = len(argvs)
+gdbm.firstkey=0
+
 if (argc == 0) :
     print 'Error: wrong number of arguments: 1 and over'
 else:
@@ -54,6 +56,8 @@ else:
                  app[itemList[x][2]] = int(itemList[x][1])
         for (i, j) in sorted(app.items(), key=lambda x:x[1], reverse=True):
             print '%s \t %d' %(i, j)
+
+    
 
         
     if (argvs[0] == 'add'):
